@@ -1,0 +1,59 @@
+:root {
+  --c-black: #111111;
+  --c-white: #ffffff;
+  --c-gray-100: #f8f8f6;
+  --c-gray-200: #e8e8e8;
+  --c-gray-400: #aaaaaa;
+  --c-gray-600: #666666;
+  --c-ink-fixed: #0b0b0c;
+  --c-white-fixed: #ffffff;
+  --c-line-fixed: rgba(255, 255, 255, 0.1);
+  --c-muted-fixed: rgba(255, 255, 255, 0.72);
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --text-hero: clamp(3.5rem, 10vw, 8rem);
+  --text-section: clamp(2.6rem, 7vw, 5.4rem);
+  --text-h3: clamp(1.25rem, 2.5vw, 1.75rem);
+  --text-body: clamp(0.95rem, 1.2vw, 1rem);
+  --text-small: 0.8125rem;
+  --text-label: 0.6875rem;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-2xl: 8rem;
+  --space-3xl: 10rem;
+
+  --container: 1280px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --nav-height: 60px;
+
+  --border: 1px solid var(--c-gray-200);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+  --duration-fast: 200ms;
+  --duration-std: 400ms;
+  --duration-slow: 700ms;
+  --ticker-duration: 30s;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-black: #eeeeee;
+    --c-white: #0e0e0e;
+    --c-gray-100: #161616;
+    --c-gray-200: #2a2a2a;
+    --c-gray-400: #666666;
+    --c-gray-600: #888888;
+  }
+}

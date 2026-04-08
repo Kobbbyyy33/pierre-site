@@ -1,0 +1,341 @@
+/* Document */
+html {
+  background: var(--c-white);
+  color: var(--c-black);
+}
+
+body {
+  background: var(--c-white);
+  color: var(--c-black);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.6;
+}
+
+p {
+  max-width: 62ch;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+.label,
+.section-label,
+.tag,
+.filter-btn,
+.nav__cta,
+.timeline__date,
+.footer__copy,
+.footer__credit {
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.section-label {
+  display: inline-flex;
+  color: var(--c-gray-400);
+  margin-bottom: var(--space-md);
+}
+
+.section-title,
+.contact__title {
+  font-family: var(--font-display);
+  font-size: var(--text-section);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.section-title em,
+.contact__title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.about__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-section);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: var(--c-white-fixed);
+}
+
+.about__headline em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.about__lede {
+  max-width: 34rem;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  color: var(--c-muted-fixed);
+}
+
+.expertise__summary {
+  max-width: 26rem;
+  color: var(--c-gray-600);
+  font-size: clamp(1rem, 1.4vw, 1.08rem);
+}
+
+.hero__title-stage {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero__title-backdrop {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  z-index: -1;
+  width: min(100vw, 78rem);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero__backline {
+  display: block;
+  font-family: var(--font-body);
+  font-size: clamp(2.1rem, 8vw, 5.75rem);
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.08em;
+  text-transform: lowercase;
+  white-space: nowrap;
+  color: rgba(17, 17, 17, 0.055);
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero__backline {
+    color: rgba(255, 255, 255, 0.08);
+    mix-blend-mode: screen;
+  }
+}
+
+.hero__backline--1,
+.hero__backline--3 {
+  text-align: left;
+}
+
+.hero__backline--2 {
+  text-align: right;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  color: var(--c-black);
+}
+
+.hero__title > .hero__line {
+  display: block;
+  margin-bottom: 0.08em;
+}
+
+.hero__title > .hero__line:last-child {
+  margin-bottom: 0;
+}
+
+.hero__title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.hero__title > .hero__line > span,
+.hero__title > .hero__line > em {
+  display: block;
+}
+
+.hero__desc,
+.contact__note,
+.project-card__overlay p,
+.timeline__missions,
+.expertise__card ul {
+  color: var(--c-gray-600);
+}
+
+.hero__desc,
+.contact__note {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+.expertise__card h3,
+.education__school,
+.project-card__title,
+.timeline__role {
+  line-height: 1;
+}
+
+.expertise__card h3 {
+  font-family: var(--font-body);
+  font-size: clamp(1.45rem, 2.2vw, 2.25rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.education__school {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 5vw, 4.4rem);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.project-card__title,
+.timeline__role {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.timeline__role {
+  font-family: var(--font-body);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.timeline__missions,
+.expertise__card ul,
+.contact__social,
+.project-card__links {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.expertise__kicker {
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-gray-400);
+}
+
+.expertise__lead {
+  max-width: 24ch;
+  color: var(--c-gray-600);
+  font-size: clamp(1rem, 1.3vw, 1.08rem);
+  line-height: 1.45;
+}
+
+.education__intro,
+.education__copy,
+.education__meta,
+.education__degree {
+  color: var(--c-gray-600);
+}
+
+.education__intro {
+  max-width: 36rem;
+  font-size: clamp(1rem, 1.35vw, 1.08rem);
+}
+
+.education__degree {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.14rem);
+}
+
+.education__meta,
+.education__date,
+.education__kicker {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.education__kicker,
+.education__date {
+  color: var(--c-gray-400);
+}
+
+.contact__email {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.timeline__company-name,
+.project-card__category,
+.stat__label {
+  color: var(--c-gray-600);
+}
+
+.legal-intro,
+.legal-card p,
+.legal-card li,
+.footer__nav a,
+.legal-back {
+  color: var(--c-gray-600);
+}
+
+.legal-intro {
+  max-width: 58ch;
+  font-size: clamp(1rem, 1.45vw, 1.08rem);
+}
+
+.legal-card h2 {
+  font-family: var(--font-body);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.legal-card h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.legal-list strong {
+  color: var(--c-black);
+}
+
+.timeline__caption {
+  max-width: 28ch;
+  color: var(--c-gray-600);
+  font-size: clamp(0.96rem, 1.2vw, 1.02rem);
+  line-height: 1.45;
+}
+
+.about__proof-copy strong,
+.about__metric-top {
+  font-size: 0.63rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about__proof-copy strong,
+.about__proof-copy span,
+.about__metric-top,
+.about__caption p,
+.about__stat .stat__label {
+  color: var(--c-white-fixed);
+}
+
+.about__proof-copy strong {
+  line-height: 1.2;
+}
+
+.about__proof-copy span,
+.about__caption p,
+.about__stat .stat__label {
+  font-size: clamp(0.92rem, 1vw, 1rem);
+  line-height: 1.4;
+  opacity: 0.72;
+}

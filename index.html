@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierre Lemaire - Product Manager & Strategiste</title>
+    <meta
+      name="description"
+      content="Product Manager a Bordeaux, je relie vision business, execution produit et clarte operationnelle pour transformer des ambitions en croissance durable."
+    >
+
+    <meta property="og:title" content="Pierre Lemaire - PM & Strategiste">
+    <meta
+      property="og:description"
+      content="Product Manager a Bordeaux, je structure la vision, aligne les equipes et accelere l'execution."
+    >
+    <meta property="og:image" content="/assets/img/og-cover.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pierre-lemaire.fr">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pierre Lemaire">
+    <meta
+      name="twitter:description"
+      content="Product Manager, stratege et builder base a Bordeaux."
+    >
+    <meta name="twitter:image" content="/assets/img/og-cover.jpg">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pierre Lemaire",
+        "jobTitle": "Product Manager",
+        "url": "https://pierre-lemaire.fr",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bordeaux"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/pierre-lemaire-pm",
+          "https://github.com/pierrebuilder"
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,300;1,700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap"
+    >
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,300;1,700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap"
+    >
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/tokens.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/background.css">
+
+    <link rel="canonical" href="https://pierre-lemaire.fr">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  </head>
+  <body>
+    <!-- Premium background system -->
+    <div class="bg-system" aria-hidden="true">
+      <svg class="bg-waves bg-waves--tl" viewBox="0 0 900 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-80 340 C150 150, 380 500, 620 280 S1000 430, 1300 190" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+        <path d="M-50 430 C180 270, 350 540, 580 360 S950 510, 1250 300" stroke="rgba(255,255,255,0.10)" stroke-width="0.7"/>
+        <path d="M-120 250 C100 80, 420 420, 660 210 S1060 370, 1340 130" stroke="rgba(255,255,255,0.07)" stroke-width="0.6"/>
+        <path d="M-30 510 C200 360, 400 580, 640 430 S1000 560, 1280 370" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+        <path d="M-60 170 C120 50, 350 300, 590 140 S980 280, 1260 90" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+      </svg>
+      <svg class="bg-waves bg-waves--br" viewBox="0 0 900 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-60 370 C200 180, 460 490, 700 280 S1060 440, 1350 200" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+        <path d="M-40 460 C170 300, 410 540, 660 360 S1010 500, 1300 310" stroke="rgba(255,255,255,0.08)" stroke-width="0.7"/>
+        <path d="M-100 290 C150 120, 480 430, 730 220 S1100 380, 1380 140" stroke="rgba(255,255,255,0.06)" stroke-width="0.6"/>
+        <path d="M-20 530 C220 400, 440 600, 680 460 S1040 580, 1320 420" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+      </svg>
+    </div>
+
+    <header class="nav" id="nav" role="banner">
+      <a href="#hero" class="nav__logo" aria-label="Accueil">
+        PL<sup>&reg;</sup>
+      </a>
+
+      <nav class="nav__desktop" aria-label="Navigation principale">
+        <ul class="nav__links" role="list">
+          <li><a href="#about">Profil</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#experience">Parcours</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <a
+          href="/assets/cv.pdf"
+          class="nav__cta"
+          download
+          aria-label="Telecharger mon CV en PDF"
+        >
+          CV.pdf &darr;
+        </a>
+        <button
+          class="nav__burger"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="nav-mobile"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="nav__panel" id="nav-mobile" aria-label="Navigation mobile">
+        <ul class="nav__panel-links" role="list">
+          <li><a href="#about">Profil</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#experience">Parcours</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="nav__panel-cta" href="/assets/cv.pdf" download>
+          Telecharger le CV
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero" aria-label="Introduction">
+        <div class="container hero__container">
+          <div class="hero__title-stage">
+            <h1 class="hero__title">
+              <span class="hero__line hero__line--1">
+                <em>Je conçois,</em>
+              </span>
+              <span class="hero__line hero__line--2">
+                <span>je developpe,</span>
+              </span>
+              <span class="hero__line hero__line--3">
+                <em>je déploie.</em>
+              </span>
+            </h1>
+          </div>
+
+          <div class="hero__body">
+            <div class="hero__actions">
+              <a href="#projects" class="btn btn--primary">Voir mes projets</a>
+              <a href="#contact" class="btn btn--ghost">Me contacter</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__strip" aria-hidden="true">
+          <div class="strip__track">
+            <div class="strip__group strip__group--seed">
+              <figure class="strip__item">
+                <img src="/assets/img/strip-1.webp?v=20260405-hero" alt="" loading="eager" width="420" height="600">
+              </figure>
+              <figure class="strip__item">
+                <img src="/assets/img/strip-2.webp?v=20260405-hero" alt="" loading="eager" width="420" height="600">
+              </figure>
+              <figure class="strip__item">
+                <img src="/assets/img/strip-3.webp?v=20260405-hero" alt="" loading="eager" width="420" height="600">
+              </figure>
+              <figure class="strip__item">
+                <img src="/assets/img/strip-4.webp?v=20260405-hero" alt="" loading="eager" width="420" height="600">
+              </figure>
+              <figure class="strip__item">
+                <img src="/assets/img/strip-5.webp?v=20260405-hero" alt="" loading="eager" width="420" height="600">
+              </figure>
+              <figure class="strip__item">
+                <img src="/assets/img/strip-6.webp?v=20260405-hero" alt="" loading="eager" width="420" height="600">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span>PRODUCT MANAGEMENT</span><span aria-hidden="true">/</span>
+          <span>STRATEGIE BUSINESS</span><span aria-hidden="true">/</span>
+          <span>MARKETING &amp; GROWTH</span><span aria-hidden="true">/</span>
+          <span>LEADERSHIP D'EQUIPE</span><span aria-hidden="true">/</span>
+          <span>PRISE DE PAROLE</span><span aria-hidden="true">/</span>
+          <span>DEVELOPPEMENT</span><span aria-hidden="true">/</span>
+          <span>PRODUCT MANAGEMENT</span><span aria-hidden="true">/</span>
+          <span>STRATEGIE BUSINESS</span><span aria-hidden="true">/</span>
+          <span>MARKETING &amp; GROWTH</span><span aria-hidden="true">/</span>
+          <span>LEADERSHIP D'EQUIPE</span><span aria-hidden="true">/</span>
+          <span>PRISE DE PAROLE</span><span aria-hidden="true">/</span>
+          <span>DEVELOPPEMENT</span><span aria-hidden="true">/</span>
+        </div>
+      </div>
+
+      <section class="about section about--v2" id="about" aria-labelledby="about-title">
+        <div class="about__bg-num" aria-hidden="true">01</div>
+        <div class="about__grain-layer" aria-hidden="true"></div>
+
+        <div class="container">
+          <div class="about__layout-v2">
+
+            <div class="about__col-text">
+              <span class="section-label">01 - Profil</span>
+              <h2 id="about-title" class="about__headline-v2">
+                <span class="about__hl-line">
+                  <span class="about__word">Un</span>
+                  <span class="about__word">profil</span>
+                </span>
+                <span class="about__hl-line">
+                  <em class="about__word about__word--em">rare.</em>
+                </span>
+              </h2>
+              <p class="about__lede reveal">
+                Je relie vision business, strategie produit et execution pour
+                transformer une ambition en direction claire, activable et
+                desiree.
+              </p>
+              <div class="about__actions reveal">
+                <a href="#experience" class="btn btn--primary">Voir mon parcours</a>
+              </div>
+              <div class="about__caption-v2 reveal">
+                <p>
+                  J'aime les sujets ambigus, les roadmaps floues et les moments
+                  ou une equipe a besoin d'un cap net, d'un systeme simple et
+                  d'une execution qui suit.
+                </p>
+              </div>
+            </div>
+
+            <div class="about__col-image">
+              <div class="about__tilt" id="about-tilt">
+                <div class="about__tilt-inner" id="about-tilt-inner">
+                  <div class="about__visual-v2">
+                    <img
+                      src="/assets/img/strip-4.webp?v=20260405-hero"
+                      alt="Visuel editorial Pierre Lemaire"
+                      width="420"
+                      height="600"
+                      loading="lazy"
+                    >
+                    <div class="about__badge-v2">
+                      <span>Product x Strategy x Build</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="about__loc" aria-hidden="true">
+                <span class="about__loc-dot"></span>
+                <span>Bordeaux, France</span>
+              </div>
+            </div>
+
+            <div class="about__col-stats">
+              <div class="about__stat-card reveal">
+                <span class="about__stat-eyebrow">Impact</span>
+                <div class="stat__value">
+                  <span class="stat__number" data-target="34">0</span>
+                  <span class="stat__unit">+</span>
+                </div>
+                <span class="stat__label">projets lances ou relances</span>
+              </div>
+
+              <div class="about__stat-card reveal">
+                <span class="about__stat-eyebrow">Experience</span>
+                <div class="stat__value">
+                  <span class="stat__number" data-target="9">0</span>
+                  <span class="stat__unit">ans</span>
+                </div>
+                <span class="stat__label">a cadrer, prioriser et livrer vite</span>
+              </div>
+
+              <div class="about__stat-card about__stat-card--proof reveal">
+                <div class="about__avatars" aria-hidden="true">
+                  <span class="about__avatar">
+                    <img src="/assets/img/strip-1.webp?v=20260405-hero" alt="" width="72" height="72" loading="lazy">
+                  </span>
+                  <span class="about__avatar">
+                    <img src="/assets/img/strip-4.webp?v=20260405-hero" alt="" width="72" height="72" loading="lazy">
+                  </span>
+                  <span class="about__avatar">
+                    <img src="/assets/img/strip-6.webp?v=20260405-hero" alt="" width="72" height="72" loading="lazy">
+                  </span>
+                  <span class="about__avatar about__avatar--plus">+</span>
+                </div>
+                <div class="about__proof-copy">
+                  <strong>6 equipes alignees</strong>
+                  <span>Produit, growth, design et tech autour d'un meme cap.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="expertise section" id="expertise" aria-labelledby="exp-title">
+        <div class="container">
+          <div class="expertise__layout">
+            <div class="section-header expertise__intro">
+              <span class="section-label">02 - Expertise</span>
+              <h2 id="exp-title" class="section-title reveal">
+                Ce que<br><em>je fais.</em>
+              </h2>
+              <p class="expertise__summary reveal">
+                Je pilote des projets web et e-commerce avec une approche tres
+                concrete, entre conception, performance, contenu et execution.
+              </p>
+            </div>
+
+            <div class="expertise__grid">
+            <article class="expertise__card reveal" data-index="01">
+              <span class="expertise__number" aria-hidden="true">01</span>
+              <span class="expertise__kicker">Pilotage</span>
+              <h3>Gestion de projet web</h3>
+              <p class="expertise__lead">
+                Je coordonne les projets digitaux avec une vision claire des priorites et des livrables.
+              </p>
+              <ul role="list">
+                <li>Gestion de projets digitaux</li>
+                <li>Gestion de projet</li>
+                <li>Collaboration entre equipes</li>
+                <li>Management</li>
+              </ul>
+            </article>
+
+            <article class="expertise__card reveal" data-index="02">
+              <span class="expertise__number" aria-hidden="true">02</span>
+              <span class="expertise__kicker">Commerce</span>
+              <h3>E-commerce &amp; Shopify</h3>
+              <p class="expertise__lead">
+                J'optimise les parcours, l'organisation boutique et la performance commerciale.
+              </p>
+              <ul role="list">
+                <li>Shopify</li>
+                <li>E-commerce</li>
+                <li>Gestion e-commerce</li>
+                <li>Optimisation e-commerce</li>
+              </ul>
+            </article>
+
+            <article class="expertise__card reveal" data-index="03">
+              <span class="expertise__number" aria-hidden="true">03</span>
+              <span class="expertise__kicker">Analyse</span>
+              <h3>Web analytique</h3>
+              <p class="expertise__lead">
+                Je lis les donnees pour identifier les leviers utiles et mieux orienter les actions.
+              </p>
+              <ul role="list">
+                <li>Web analytique</li>
+                <li>Competences analytiques</li>
+                <li>Looker Studio</li>
+                <li>WebTrends Analytics</li>
+              </ul>
+            </article>
+
+            <article class="expertise__card reveal" data-index="04">
+              <span class="expertise__number" aria-hidden="true">04</span>
+              <span class="expertise__kicker">Experience</span>
+              <h3>Conception web</h3>
+              <p class="expertise__lead">
+                Je structure des interfaces utiles et lisibles, du cadrage a l'integration.
+              </p>
+              <ul role="list">
+                <li>Conception web</li>
+                <li>Wireframing</li>
+                <li>Figma</li>
+                <li>WordPress</li>
+              </ul>
+            </article>
+
+            <article class="expertise__card reveal" data-index="05">
+              <span class="expertise__number" aria-hidden="true">05</span>
+              <span class="expertise__kicker">Acquisition</span>
+              <h3>SEO &amp; webmarketing</h3>
+              <p class="expertise__lead">
+                Je travaille la visibilite, les contenus et le positionnement pour soutenir la croissance.
+              </p>
+              <ul role="list">
+                <li>Optimisation pour les moteurs de recherche (SEO)</li>
+                <li>Webmarketing</li>
+                <li>Strategie marketing</li>
+                <li>Veille concurrentielle</li>
+              </ul>
+            </article>
+
+            <article class="expertise__card reveal" data-index="06">
+              <span class="expertise__number" aria-hidden="true">06</span>
+              <span class="expertise__kicker">Execution</span>
+              <h3>Operations &amp; outils</h3>
+              <p class="expertise__lead">
+                Je fluidifie l'execution quotidienne avec des outils simples et des process clairs.
+              </p>
+              <ul role="list">
+                <li>Google Apps Script</li>
+                <li>Front office</li>
+                <li>Operations back office</li>
+                <li>Formation des nouvelles recrues</li>
+              </ul>
+            </article>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience section xp--v2" id="experience" aria-labelledby="xp-title">
+        <div class="xp-spine" aria-hidden="true">
+          <div class="xp-spine__fill"></div>
+        </div>
+        <div class="container xp-layout">
+          <div class="section-header xp-header">
+            <span class="section-label">03 - Parcours</span>
+            <h2 id="xp-title" class="section-title reveal">
+              La ou<br><em>j'ai oeuvre.</em>
+            </h2>
+          </div>
+
+          <ol class="xp-list" role="list">
+
+            <li class="xp-item xp-item--1 reveal">
+              <div class="xp-item__card">
+                <span class="xp-item__bg-num" aria-hidden="true">01</span>
+                <div class="xp-item__wrap">
+                  <div class="xp-item__center">
+                    <div class="xp-item__badge" aria-hidden="true">ND</div>
+                    <p class="xp-item__company">NutriDry</p>
+                    <h3 class="xp-item__role">Chef de projet web et e-commerce</h3>
+                    <p class="xp-item__caption">Contrat en alternance · Bordeaux, Nouvelle-Aquitaine · Sur site</p>
+                    <time class="xp-item__date">sept. 2024 – aujourd'hui</time>
+                    <div class="xp-item__tags">
+                      <span class="tag tag--mono">Shopify</span>
+                      <span class="tag tag--mono">SEO</span>
+                      <span class="tag tag--mono">Google Apps Script</span>
+                      <span class="tag tag--mono">Looker Studio</span>
+                    </div>
+                  </div>
+                  <div class="xp-item__right">
+                    <ul class="xp-item__missions" role="list">
+                      <li><strong>Pilotage et developpement web :</strong> gestion complete du deploiement du site e-commerce Emergency Food sous Shopify, avec integration front-end, optimisation UX/UI et coordination avec la marque.</li>
+                      <li>Developpement sur mesure en Liquid, HTML et CSS, avec creation de sections personnalisees et ajout de rich snippets avec l'IA pour les avis, FAQ, produits et articles.</li>
+                      <li>Automatisation de la remontee des ventes via Google Apps Script, pour une lecture simplifiee et centralisee des performances web.</li>
+                      <li>E-merchandising global : mise en avant des produits, organisation des collections et optimisation du parcours d'achat sur l'ensemble des sites du groupe, dont MX3, Voyager Nutrition et Emergency Food.</li>
+                      <li><strong>Projet de refonte MX3 - pages Athletes :</strong> pilotage de la refonte des pages Athletes, Ambassadeurs, Clubs et Evenements pour la marque MX3.</li>
+                      <li>Collaboration directe avec une agence externe et les equipes marketing internes, avec conception des wireframes, definition des parcours utilisateurs et suivi des integrations jusqu'a la mise en ligne.</li>
+                      <li><strong>SEO et performance :</strong> optimisation technique et editoriale des pages produits, collections et articles de blog, avec suivi des performances via Google Search Console, Looker Studio et Google Ads.</li>
+                      <li>Definition d'une strategie SEO axee sur les grands evenements sportifs outdoor.</li>
+                      <li><strong>Marketing et contenu :</strong> redaction de contenus optimises SEO, contribution a la strategie de communication digitale des marques MX3, Voyager Nutrition et Emergency Food, et participation a la coherence visuelle du site.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="xp-item xp-item--2 reveal">
+              <div class="xp-item__card">
+                <span class="xp-item__bg-num" aria-hidden="true">02</span>
+                <div class="xp-item__wrap">
+                  <div class="xp-item__center">
+                    <div class="xp-item__badge" aria-hidden="true">FF</div>
+                    <p class="xp-item__company">fair-fair</p>
+                    <h3 class="xp-item__role">Responsable projets web</h3>
+                    <p class="xp-item__caption">1 an 6 mois · Bordeaux, Nouvelle-Aquitaine · stage puis alternance</p>
+                    <time class="xp-item__date">avr. 2023 – sept. 2024</time>
+                    <div class="xp-item__tags">
+                      <span class="tag tag--mono">WordPress</span>
+                      <span class="tag tag--mono">Shopify</span>
+                      <span class="tag tag--mono">UX design</span>
+                      <span class="tag tag--mono">Web analytics</span>
+                    </div>
+                  </div>
+                  <div class="xp-item__right">
+                    <ul class="xp-item__missions" role="list">
+                      <li><strong>Responsable projets web - alternance :</strong> pilote des projets web autour de WordPress, Shopify, UX design, growth hacking, web analytics et management d'equipes techniques.</li>
+                      <li>Travaille le referencement naturel et payant, les Ads Facebook, Instagram et TikTok, ainsi que le community management pour faire connaitre les projets.</li>
+                      <li><strong>Redaction, creation de contenus et integration WordPress - stage :</strong> cree des services numeriques et participe a la mise en ligne de contenus et pages sur WordPress et Shopify.</li>
+                      <li>Contribue a la visibilite des projets via le SEO, les campagnes social ads et l'animation des reseaux sociaux.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="xp-item xp-item--3 reveal">
+              <div class="xp-item__card">
+                <span class="xp-item__bg-num" aria-hidden="true">03</span>
+                <div class="xp-item__wrap">
+                  <div class="xp-item__center">
+                    <div class="xp-item__badge" aria-hidden="true">NM</div>
+                    <p class="xp-item__company">Nova Mobility</p>
+                    <h3 class="xp-item__role">Lead Product Manager</h3>
+                    <p class="xp-item__caption">Portefeuille multi-produits · cadrage · go-to-market transverse</p>
+                    <time class="xp-item__date">2020 – 2023</time>
+                    <div class="xp-item__tags">
+                      <span class="tag tag--mono">B2B SaaS</span>
+                      <span class="tag tag--mono">Go-to-market</span>
+                      <span class="tag tag--mono">Ops</span>
+                    </div>
+                  </div>
+                  <div class="xp-item__right">
+                    <ul class="xp-item__missions" role="list">
+                      <li>Pilote un portefeuille de 3 produits B2B et 2 squads pluridisciplinaires.</li>
+                      <li>Fait progresser la retention de 14&thinsp;% en six mois via une strategie de feedback loop.</li>
+                      <li>Aligne marketing, sales et ops autour d'un plan go-to-market unique.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="xp-item xp-item--4 reveal">
+              <div class="xp-item__card">
+                <span class="xp-item__bg-num" aria-hidden="true">04</span>
+                <div class="xp-item__wrap">
+                  <div class="xp-item__center">
+                    <div class="xp-item__badge" aria-hidden="true">MS</div>
+                    <p class="xp-item__company">Meridian SaaS</p>
+                    <h3 class="xp-item__role">Product &amp; Growth Manager</h3>
+                    <p class="xp-item__caption">Data, experimentation et premiers systemes de pilotage produit</p>
+                    <time class="xp-item__date">2017 – 2020</time>
+                    <div class="xp-item__tags">
+                      <span class="tag tag--mono">Analytics</span>
+                      <span class="tag tag--mono">Experimentation</span>
+                      <span class="tag tag--mono">Execution</span>
+                    </div>
+                  </div>
+                  <div class="xp-item__right">
+                    <ul class="xp-item__missions" role="list">
+                      <li>Monte les premiers dashboards produit et marketing pour fiabiliser les arbitrages.</li>
+                      <li>Coordonne la sortie de 12 fonctionnalites majeures sur un produit en croissance.</li>
+                      <li>Construit un process d'experimentation qui double le rythme des tests actifs.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ol>
+        </div>
+      </section>
+
+      <section class="education section" id="education" aria-labelledby="education-title">
+        <div class="container">
+          <div class="education__header section-header">
+            <span class="section-label">04 - Formation</span>
+            <h2 id="education-title" class="section-title reveal">
+              Ce que<br><em>j'ai appris.</em>
+            </h2>
+            <p class="education__intro reveal">
+              Deux cycles menes a Bordeaux pour renforcer ma lecture du web,
+              du marketing digital, de la marque et de la coordination de
+              projets.
+            </p>
+          </div>
+
+          <div class="education__grid">
+            <article class="education__card reveal" aria-labelledby="edu-bachelor-title">
+              <span class="education__index" aria-hidden="true">01</span>
+              <div class="education__top">
+                <span class="education__kicker">Bachelor</span>
+                <time class="education__date">2022 - 2024</time>
+              </div>
+              <h3 id="edu-bachelor-title" class="education__school">INSEEC</h3>
+              <p class="education__degree">Bachelor digital marketing</p>
+              <p class="education__meta">Bordeaux</p>
+              <p class="education__copy">
+                Un cycle qui m'a donne des bases solides en marketing digital,
+                culture web, contenus, acquisition et structuration de
+                projets.
+              </p>
+              <div class="education__tags">
+                <span class="tag tag--mono">Marketing digital</span>
+                <span class="tag tag--mono">Culture web</span>
+                <span class="tag tag--mono">Contenus</span>
+                <span class="tag tag--mono">Acquisition</span>
+              </div>
+            </article>
+
+            <article class="education__card reveal" aria-labelledby="edu-master-title">
+              <span class="education__index" aria-hidden="true">02</span>
+              <div class="education__top">
+                <span class="education__kicker">Master</span>
+                <time class="education__date">2024 - 2026</time>
+              </div>
+              <h3 id="edu-master-title" class="education__school">INSEEC</h3>
+              <p class="education__degree">Master marketing et strategie de marque</p>
+              <p class="education__meta">Bordeaux</p>
+              <p class="education__copy">
+                Une formation plus orientee strategie, positionnement et vision
+                globale, avec une attention forte portee a la marque, a la
+                coherence et au pilotage.
+              </p>
+              <div class="education__tags">
+                <span class="tag tag--mono">Strategie de marque</span>
+                <span class="tag tag--mono">Positionnement</span>
+                <span class="tag tag--mono">Communication</span>
+                <span class="tag tag--mono">Pilotage</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects section projects--index" id="projects" aria-labelledby="proj-title">
+        <div class="container">
+          <div class="proj-header">
+            <div class="proj-header__left">
+              <span class="section-label">05 - Projets</span>
+              <h2 id="proj-title" class="section-title reveal">
+                Ce que<br><em>j'ai bati.</em>
+              </h2>
+            </div>
+            <div class="filter-bar" role="group" aria-label="Filtrer les projets">
+              <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">Tous</button>
+              <button class="filter-btn" type="button" data-filter="product" aria-pressed="false">Product</button>
+              <button class="filter-btn" type="button" data-filter="tech" aria-pressed="false">Tech</button>
+              <button class="filter-btn" type="button" data-filter="strategy" aria-pressed="false">Strategie</button>
+            </div>
+          </div>
+
+          <div class="proj-stage" id="proj-stage">
+
+            <div class="proj-cursor" id="proj-cursor" aria-hidden="true">
+              <span class="proj-cursor__label">VOIR</span>
+              <span class="proj-cursor__arrow">&#8599;</span>
+            </div>
+
+            <ul class="proj-list" id="proj-list" role="list">
+              <li class="proj-row reveal" data-category="product" data-proj="1">
+                <a class="proj-row__inner" href="https://example.com" rel="noopener noreferrer" target="_blank" aria-label="Voir Editorial Sprint">
+                  <span class="proj-row__num" aria-hidden="true">01</span>
+                  <div class="proj-row__content">
+                    <h3 class="proj-row__title">Editorial Sprint</h3>
+                    <p class="proj-row__desc">Construction d'une experience de lancement plus claire, plus desirable et plus narrative pour un produit en phase de repositionnement.</p>
+                  </div>
+                  <div class="proj-row__meta">
+                    <span class="proj-row__cat">Product</span>
+                    <time class="proj-row__year">2025</time>
+                  </div>
+                  <span class="proj-row__arrow" aria-hidden="true">&#8599;</span>
+                </a>
+              </li>
+
+              <li class="proj-row reveal" data-category="tech" data-proj="2">
+                <a class="proj-row__inner" href="https://example.com" rel="noopener noreferrer" target="_blank" aria-label="Voir Dev Experience Lab">
+                  <span class="proj-row__num" aria-hidden="true">02</span>
+                  <div class="proj-row__content">
+                    <h3 class="proj-row__title">Dev Experience Lab</h3>
+                    <p class="proj-row__desc">Prototype d'une experience plus fluide entre produit et execution technique pour accelerer le passage de l'idee au test.</p>
+                  </div>
+                  <div class="proj-row__meta">
+                    <span class="proj-row__cat">Tech</span>
+                    <time class="proj-row__year">2024</time>
+                  </div>
+                  <span class="proj-row__arrow" aria-hidden="true">&#8599;</span>
+                </a>
+              </li>
+
+              <li class="proj-row reveal" data-category="product" data-proj="3">
+                <a class="proj-row__inner" href="https://example.com" rel="noopener noreferrer" target="_blank" aria-label="Voir Hospitality Journey">
+                  <span class="proj-row__num" aria-hidden="true">03</span>
+                  <div class="proj-row__content">
+                    <h3 class="proj-row__title">Hospitality Journey</h3>
+                    <p class="proj-row__desc">Travail de parcours et de desirabilite pour une experience hospitality plus memorable, plus simple et plus premium.</p>
+                  </div>
+                  <div class="proj-row__meta">
+                    <span class="proj-row__cat">Product</span>
+                    <time class="proj-row__year">2024</time>
+                  </div>
+                  <span class="proj-row__arrow" aria-hidden="true">&#8599;</span>
+                </a>
+              </li>
+
+              <li class="proj-row reveal" data-category="strategy" data-proj="4">
+                <a class="proj-row__inner" href="https://example.com" rel="noopener noreferrer" target="_blank" aria-label="Voir Growth Narrative">
+                  <span class="proj-row__num" aria-hidden="true">04</span>
+                  <div class="proj-row__content">
+                    <h3 class="proj-row__title">Growth Narrative</h3>
+                    <p class="proj-row__desc">Definition d'un narratif de croissance et d'un angle de campagne pour mieux aligner message, acquisition et image.</p>
+                  </div>
+                  <div class="proj-row__meta">
+                    <span class="proj-row__cat">Strategie</span>
+                    <time class="proj-row__year">2024</time>
+                  </div>
+                  <span class="proj-row__arrow" aria-hidden="true">&#8599;</span>
+                </a>
+              </li>
+
+              <li class="proj-row reveal" data-category="product" data-proj="5">
+                <a class="proj-row__inner" href="https://example.com" rel="noopener noreferrer" target="_blank" aria-label="Voir Travel Experience">
+                  <span class="proj-row__num" aria-hidden="true">05</span>
+                  <div class="proj-row__content">
+                    <h3 class="proj-row__title">Travel Experience</h3>
+                    <p class="proj-row__desc">Cadrage d'une experience travel plus lisible et plus emotionnelle, entre inspiration, projection et conversion.</p>
+                  </div>
+                  <div class="proj-row__meta">
+                    <span class="proj-row__cat">Product</span>
+                    <time class="proj-row__year">2023</time>
+                  </div>
+                  <span class="proj-row__arrow" aria-hidden="true">&#8599;</span>
+                </a>
+              </li>
+
+              <li class="proj-row reveal" data-category="strategy" data-proj="6">
+                <a class="proj-row__inner" href="https://example.com" rel="noopener noreferrer" target="_blank" aria-label="Voir Summit Narrative">
+                  <span class="proj-row__num" aria-hidden="true">06</span>
+                  <div class="proj-row__content">
+                    <h3 class="proj-row__title">Summit Narrative</h3>
+                    <p class="proj-row__desc">Construction d'un territoire visuel et d'un recit de marque plus ambitieux pour un positionnement haut de gamme.</p>
+                  </div>
+                  <div class="proj-row__meta">
+                    <span class="proj-row__cat">Strategie</span>
+                    <time class="proj-row__year">2023</time>
+                  </div>
+                  <span class="proj-row__arrow" aria-hidden="true">&#8599;</span>
+                </a>
+              </li>
+            </ul>
+
+            <div class="proj-preview" id="proj-preview" aria-hidden="true">
+              <div class="proj-preview__frame">
+                <img class="proj-preview__img" data-proj="1" src="/assets/img/projects/proj-1.webp" alt="" loading="lazy">
+                <img class="proj-preview__img" data-proj="2" src="/assets/img/projects/proj-2.webp" alt="" loading="lazy">
+                <img class="proj-preview__img" data-proj="3" src="/assets/img/projects/proj-3.webp" alt="" loading="lazy">
+                <img class="proj-preview__img" data-proj="4" src="/assets/img/projects/proj-4.webp" alt="" loading="lazy">
+                <img class="proj-preview__img" data-proj="5" src="/assets/img/projects/proj-5.webp" alt="" loading="lazy">
+                <img class="proj-preview__img" data-proj="6" src="/assets/img/projects/proj-6.webp" alt="" loading="lazy">
+                <div class="proj-preview__idle" aria-hidden="true">
+                  <div class="proj-idle__rings">
+                    <span class="proj-idle__ring proj-idle__ring--1"></span>
+                    <span class="proj-idle__ring proj-idle__ring--2"></span>
+                    <span class="proj-idle__ring proj-idle__ring--3"></span>
+                  </div>
+                  <span class="proj-idle__hint">survolez un projet</span>
+                </div>
+                <div class="proj-preview__scrim" aria-hidden="true"></div>
+              </div>
+              <div class="proj-preview__caption">
+                <div class="proj-preview__progress">
+                  <div class="proj-preview__fill" id="proj-preview-fill"></div>
+                </div>
+                <span class="proj-preview__idx" id="proj-preview-idx">— survolez pour explorer</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="contact__grid">
+            <div class="contact__left">
+              <span class="section-label">06 - Contact</span>
+              <h2 id="contact-title" class="contact__title reveal">
+                Travaillons<br><em>ensemble.</em>
+              </h2>
+              <div class="contact__info reveal">
+                <a href="mailto:bonjour@pierre-lemaire.fr" class="contact__email">
+                  bonjour@pierre-lemaire.fr
+                </a>
+                <p class="contact__note">
+                  Bordeaux, France. Disponible pour une mission en strategie
+                  web, en conception ou en pilotage de projet digital.
+                </p>
+                <div class="contact__social">
+                  <a
+                    class="contact__social-link"
+                    href="https://www.linkedin.com/in/pierre-lemaire-pm"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    aria-label="Mon profil LinkedIn"
+                  >
+                    Voir mon LinkedIn
+                  </a>
+                </div>
+              </div>
+              <div class="contact-faq reveal">
+                <details class="contact-faq__item">
+                  <summary>Quel est mon profil ?</summary>
+                  <p>
+                    Je suis un profil hybride entre strategie web, conception
+                    et pilotage de projet. J'interviens pour clarifier un
+                    besoin, structurer des pages, coordonner les parties
+                    prenantes et faire avancer un projet digital avec coherence.
+                  </p>
+                </details>
+
+                <details class="contact-faq__item">
+                  <summary>Que montre mon CV ?</summary>
+                  <p>
+                    Mon CV retrace mon evolution dans le web, l'e-commerce et
+                    la coordination de projets digitaux. On y retrouve des
+                    missions de conception, de gestion de contenu, de SEO,
+                    d'animation transverse et de suivi de performance.
+                  </p>
+                </details>
+
+                <details class="contact-faq__item">
+                  <summary>Sur quels sujets ai-je travaille ?</summary>
+                  <p>
+                    J'ai travaille sur des refontes de pages, des parcours web,
+                    des sites e-commerce, l'organisation de contenus, le
+                    referencement naturel, l'analyse de performance et la
+                    coordination de projets entre metier, technique et
+                    marketing.
+                  </p>
+                </details>
+
+                <details class="contact-faq__item">
+                  <summary>Est-ce que je propose des prestations freelance ?</summary>
+                  <p>
+                    Oui. En freelance, je me concentre sur la conception web :
+                    cadrage de pages, wireframes, structure de contenu, parcours
+                    utilisateur et recommandations pour rendre un site plus
+                    clair, plus coherent et plus efficace.
+                  </p>
+                </details>
+              </div>
+            </div>
+
+            <div class="contact__right">
+              <form
+                class="contact-form"
+                id="contact-form"
+                novalidate
+                action="https://formspree.io/f/mjgpzadv"
+                method="POST"
+              >
+                <input
+                  type="hidden"
+                  id="form-subject"
+                  name="_subject"
+                  value="Nouveau message depuis le site Pierre Lemaire"
+                >
+                <input
+                  type="hidden"
+                  id="form-replyto"
+                  name="_replyto"
+                  value=""
+                >
+                <input
+                  type="hidden"
+                  name="Source du message"
+                  value="Formulaire de contact du site pierre-lemaire.fr"
+                >
+                <div class="form-field">
+                  <label for="name">Nom complet</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="Nom complet"
+                    autocomplete="name"
+                    placeholder="Pierre Lemaire"
+                    required
+                    aria-describedby="name-error"
+                  >
+                  <span class="form-error" id="name-error" role="alert"></span>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="Email"
+                      autocomplete="email"
+                      placeholder="bonjour@entreprise.fr"
+                      required
+                      aria-describedby="email-error"
+                    >
+                    <span class="form-error" id="email-error" role="alert"></span>
+                  </div>
+                  <div class="form-field">
+                    <label for="phone">Telephone</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="Telephone"
+                      autocomplete="tel"
+                      placeholder="+33 6 12 34 56 78"
+                      aria-describedby="phone-error"
+                    >
+                    <span class="form-error" id="phone-error" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="company">Societe / organisation</label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="Societe / organisation"
+                      autocomplete="organization"
+                      placeholder="Nom de l'entreprise"
+                      aria-describedby="company-error"
+                    >
+                    <span class="form-error" id="company-error" role="alert"></span>
+                  </div>
+                  <div class="form-field">
+                    <label for="inquiry-type">Type de demande</label>
+                    <select
+                      id="inquiry-type"
+                      name="Type de demande"
+                      required
+                      aria-describedby="inquiry-type-error"
+                    >
+                      <option value="">Selectionnez une option</option>
+                      <option value="strategie-web">Strategie web</option>
+                      <option value="conception-web">Conception web</option>
+                      <option value="pilotage-projet">Pilotage de projet</option>
+                      <option value="mission-freelance">Mission freelance</option>
+                      <option value="autre">Autre</option>
+                    </select>
+                    <span class="form-error" id="inquiry-type-error" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="Message"
+                    rows="5"
+                    placeholder="Parlez-moi de votre besoin, du contexte et du timing."
+                    required
+                    aria-describedby="message-error"
+                  ></textarea>
+                  <span class="form-error" id="message-error" role="alert"></span>
+                </div>
+                <div class="form-field form-field--hp" aria-hidden="true">
+                  <label for="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="_gotcha"
+                    tabindex="-1"
+                    autocomplete="off"
+                  >
+                </div>
+                <div class="form-field form-field--consent">
+                  <label class="form-checkbox" for="consent">
+                    <input
+                      type="checkbox"
+                      id="consent"
+                      name="Consentement RGPD"
+                      required
+                      aria-describedby="consent-error"
+                    >
+                    <span>
+                      J'accepte que mes donnees soient utilisees pour etre
+                      recontacte dans le cadre de ma demande.
+                    </span>
+                  </label>
+                  <span class="form-error" id="consent-error" role="alert"></span>
+                </div>
+                <p class="form-note">
+                  Vos donnees sont utilisees uniquement pour repondre a votre
+                  message. Consultez la
+                  <a href="/confidentialite.html">politique de confidentialite</a>.
+                </p>
+                <button type="submit" class="btn btn--primary btn--submit">
+                  <span class="btn__text">Envoyer</span>
+                  <span class="btn__loading" aria-hidden="true">...</span>
+                </button>
+                <div class="form-success" role="status" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container footer__inner">
+        <p class="footer__copy">&copy; 2026 Pierre Lemaire</p>
+        <nav class="footer__nav" aria-label="Pages legales">
+          <a href="/mentions-legales.html">Mentions legales</a>
+          <a href="/confidentialite.html">Confidentialite</a>
+        </nav>
+        <p class="footer__credit">Concu &amp; developpe comme un systeme vivant</p>
+        <a href="#hero" class="footer__top" aria-label="Retour en haut de page">
+          &uarr; Haut
+        </a>
+      </div>
+    </footer>
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

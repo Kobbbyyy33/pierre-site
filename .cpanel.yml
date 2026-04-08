@@ -1,0 +1,12 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/prpi4046/public_html
+    - /bin/mkdir -p "$DEPLOYPATH"
+    - /usr/bin/rsync -av --delete index.html "$DEPLOYPATH"/
+    - /usr/bin/rsync -av --delete mentions-legales.html "$DEPLOYPATH"/
+    - /usr/bin/rsync -av --delete confidentialite.html "$DEPLOYPATH"/
+    - /usr/bin/rsync -av --delete favicon.svg "$DEPLOYPATH"/
+    - /usr/bin/rsync -av --delete css/ "$DEPLOYPATH"/css/
+    - /usr/bin/rsync -av --delete js/ "$DEPLOYPATH"/js/
+    - /usr/bin/rsync -av --delete assets/ "$DEPLOYPATH"/assets/

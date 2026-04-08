@@ -1,0 +1,255 @@
+/*
+ * ═══════════════════════════════════════════════════════════
+ * PREMIUM BACKGROUND SYSTEM — Site Pierre
+ * ═══════════════════════════════════════════════════════════
+ *
+ * ONE unified dark surface across the entire page.
+ * Layers (bottom → top):
+ *   1. Base: deep black (#050505)
+ *   2. Gradient nebulae: dark blue / navy / purple hints
+ *   3. Grain texture: anti-flat noise
+ *   4. SVG wave mesh: thin animated flowing lines
+ *   5. Content (sits above via normal stacking)
+ *
+ * Performance: pure CSS + lightweight inline SVG.
+ * No external assets. No JS required.
+ */
+
+/* ─── 1. FORCE DARK PALETTE ─────────────────────────────── */
+
+:root {
+  --c-black: #e0e0e0;
+  --c-white: #080808;
+  --c-gray-100: #0d0d0e;
+  --c-gray-200: rgba(255, 255, 255, 0.06);
+  --c-gray-400: #555555;
+  --c-gray-600: #8a8a8a;
+  --c-ink-fixed: #050505;
+
+  --border: 1px solid rgba(255, 255, 255, 0.05);
+
+  color-scheme: dark;
+}
+
+/* Cancel the light-mode media query — we are always dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-black: #e0e0e0;
+    --c-white: #080808;
+    --c-gray-100: #0d0d0e;
+    --c-gray-200: rgba(255, 255, 255, 0.06);
+    --c-gray-400: #555555;
+    --c-gray-600: #8a8a8a;
+  }
+}
+
+/* ─── 2. BASE SURFACE ────────────────────────────────────── */
+
+html {
+  background: #050505;
+}
+
+body {
+  background: transparent;
+}
+
+/* ─── 3. BACKGROUND SYSTEM CONTAINER ─────────────────────── */
+
+.bg-system {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Gradient nebulae — visible dark blue / purple atmosphere */
+.bg-system::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(
+      ellipse 90% 65% at 8% 12%,
+      rgba(16, 0, 65, 0.7),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 70% 55% at 92% 75%,
+      rgba(20, 5, 72, 0.55),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 50% 45%,
+      rgba(10, 3, 45, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 35% at 70% 20%,
+      rgba(8, 0, 55, 0.3),
+      transparent 50%
+    );
+  animation: bg-nebula 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Grain texture — fractal noise overlay */
+.bg-system::after {
+  content: "";
+  position: absolute;
+  inset: -5%;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ─── 4. SVG WAVE LINES ──────────────────────────────────── */
+
+.bg-waves {
+  position: absolute;
+  fill: none;
+  stroke-linecap: round;
+  will-change: transform;
+}
+
+/* Top-left cluster */
+.bg-waves--tl {
+  top: -5%;
+  left: -10%;
+  width: 85vw;
+  max-width: 1100px;
+  height: auto;
+  animation: bg-drift-tl 16s ease-in-out infinite alternate;
+}
+
+/* Bottom-right cluster */
+.bg-waves--br {
+  bottom: -5%;
+  right: -6%;
+  width: 75vw;
+  max-width: 1000px;
+  height: auto;
+  animation: bg-drift-br 14s ease-in-out infinite alternate;
+}
+
+/* ─── 5. KEYFRAMES ───────────────────────────────────────── */
+
+@keyframes bg-nebula {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(20px, 12px) scale(1.04); }
+  100% { transform: translate(-10px, 8px) scale(1.02); }
+}
+
+@keyframes bg-drift-tl {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(40px, 25px) rotate(1.2deg); }
+}
+
+@keyframes bg-drift-br {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-35px, -20px) rotate(-0.8deg); }
+}
+
+/* ─── 6. REDUCED MOTION ──────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-system::before,
+  .bg-waves--tl,
+  .bg-waves--br {
+    animation: none;
+  }
+}
+
+/* ─── 7. COMPONENT OVERRIDES ─────────────────────────────── */
+
+/* Kill all borders — one unified surface, no breaks */
+.section,
+.footer,
+.contact__right {
+  border-top: none;
+}
+
+header.nav {
+  border-bottom: none;
+}
+
+/* Nav — translucent dark glass */
+header.nav {
+  background: rgba(5, 5, 5, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: rgba(255, 255, 255, 0.04);
+}
+
+header.nav.scrolled {
+  background: rgba(5, 5, 5, 0.88);
+}
+
+/* Cancel the nav scrolled dark-mode override */
+@media (prefers-color-scheme: dark) {
+  header.nav.scrolled {
+    background: rgba(5, 5, 5, 0.88);
+  }
+}
+
+/* Mobile nav panel */
+.nav__panel {
+  background: #080808;
+}
+
+/* About + Projects — transparent so unified bg shows through */
+.about,
+.projects--index {
+  background: transparent;
+}
+
+.projects--index {
+  border-top-color: transparent;
+}
+
+/* Hide about grain overlay — global bg-system handles grain */
+.about__grain-layer {
+  display: none;
+}
+
+/* About sub-elements — match unified bg */
+.about__badge-v2 span {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--c-white-fixed);
+}
+
+.about__visual-v2 {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.about__avatar {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: transparent;
+}
+
+/* Expertise section — transparent, unified surface */
+.expertise {
+  background: transparent;
+}
+
+/* Expertise tag pills (were hardcoded white bg) */
+.expertise__card .tag {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Hero backline — always use screen blend for dark bg */
+.hero__backline {
+  color: rgba(255, 255, 255, 0.06);
+  mix-blend-mode: screen;
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.5);
+}
