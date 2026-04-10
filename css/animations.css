@@ -24,19 +24,14 @@
     rotate(var(--expertise-rotate, 0deg));
 }
 
-/* XP v2 item reveal — opacity only (transform conflicts with sticky) */
-.xp-item.reveal {
+/* Parcours card reveal — opacity only so sticky isn't broken */
+.parcours__card.reveal {
   opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-out);
 }
-
-.xp-item.reveal.is-visible {
+.parcours__card.reveal.is-visible {
   opacity: 1;
 }
-
-.xp-item--1.reveal { transition-delay: 0ms; }
-.xp-item--2.reveal { transition-delay: 120ms; }
-.xp-item--3.reveal { transition-delay: 240ms; }
-.xp-item--4.reveal { transition-delay: 360ms; }
 
 .expertise__card:nth-child(1) {
   transition-delay: 0ms;

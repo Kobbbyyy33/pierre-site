@@ -829,134 +829,85 @@
   }
 }
 
-/* XP v2 */
-/* ═══ XP v2 — Sticky Stacking Cards ═══ */
-.xp--v2 {
+/* ═══ Parcours — Sticky Stacking Cards ═══ */
+
+.parcours {
+  padding-bottom: 0;
+}
+
+.parcours__header {
+  padding-bottom: clamp(1.1rem, 2.4vw, 1.75rem);
+}
+
+/* Stack wrapper — no overflow, full height for sticky to work */
+.parcours__stack {
   position: relative;
-  --xp-header-space: clamp(7.5rem, 16vw, 11rem);
 }
 
-.xp-layout {
-  display: grid;
-  gap: clamp(2rem, 5vw, 3.5rem);
-}
-
-.xp-header {
-  position: relative;
-  z-index: 4;
-}
-
-/* Hide the old spine — stacking cards don't need it */
-.xp-spine {
-  display: none;
-}
-
-.xp-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* ── Card base ── */
-.xp-item {
+/* ── Card ── */
+.parcours__card {
   position: sticky;
-  top: calc(var(--nav-height) + var(--xp-offset, 0px));
-  z-index: var(--xp-z, 1);
-  overflow: hidden;
-  cursor: default;
-  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-  transition: opacity 0.5s ease;
-}
-
-/* Card surface */
-.xp-item__card {
-  position: relative;
-  padding: clamp(2rem, 4vw, 3rem);
+  width: min(100% - (var(--gutter) * 2), 1240px);
+  margin-inline: auto;
+  padding: clamp(1.35rem, 2.5vw, 1.9rem);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.025);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(10, 10, 14, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   overflow: hidden;
-  will-change: transform, opacity, filter;
-  transition:
-    border-color 0.4s ease,
-    transform 0.5s var(--ease-out),
-    opacity 0.5s ease,
-    filter 0.5s var(--ease-out);
+  transition: transform 0.5s var(--ease-out), opacity 0.5s ease;
 }
 
-.xp-item:hover .xp-item__card {
-  border-color: rgba(255, 255, 255, 0.12);
+.parcours__card--1 {
+  top: calc(var(--nav-height) + 0px);
+  z-index: 2;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
 }
 
-/* Scale-down when card scrolls behind the next one */
-.xp-item.is-behind {
-  opacity: 0.72;
+.parcours__card--2 {
+  top: calc(var(--nav-height) + 28px);
+  z-index: 3;
+  margin-bottom: 0;
 }
 
-.xp-item.is-behind .xp-item__card {
-  transform: scale(0.955);
-  opacity: 0.52;
-  filter: blur(8px) saturate(0.82);
+/* When card 1 is behind card 2 */
+.parcours__card.is-behind {
+  transform: scale(0.96);
+  opacity: 0.3;
 }
 
-/* Ghost number inside card */
-.xp-item__bg-num {
+/* Ghost number */
+.parcours__ghost {
   position: absolute;
-  right: -0.04em;
+  right: -0.02em;
   top: 50%;
   transform: translateY(-50%);
   font-family: var(--font-display);
-  font-size: clamp(9rem, 20vw, 18rem);
+  font-size: clamp(10rem, 22vw, 20rem);
   font-style: italic;
   font-weight: 700;
   line-height: 1;
   color: var(--c-black);
-  opacity: 0.03;
+  opacity: 0.025;
   pointer-events: none;
   user-select: none;
-  transition: opacity 0.5s ease;
-}
-
-.xp-item:hover .xp-item__bg-num {
-  opacity: 0.065;
 }
 
 /* ── Card inner layout ── */
-.xp-item__wrap {
+.parcours__card-inner {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.3rem;
   align-items: start;
 }
 
-.xp-item__center {
+.parcours__left {
   display: grid;
-  gap: 0.45rem;
+  gap: 0.5rem;
   align-content: start;
 }
 
-.xp-item__date {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.38rem 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.04em;
-  color: var(--c-gray-600);
-  background: rgba(255, 255, 255, 0.03);
-  transition: border-color 0.3s ease, color 0.3s ease;
-  width: fit-content;
-}
-
-.xp-item:hover .xp-item__date {
-  border-color: rgba(255, 255, 255, 0.2);
-  color: var(--c-black);
-}
-
-.xp-item__badge {
+.parcours__badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -969,77 +920,81 @@
   letter-spacing: 0.06em;
   color: var(--c-gray-600);
   background: rgba(255, 255, 255, 0.03);
-  transition:
-    border-color 0.35s var(--ease-out),
-    background 0.35s var(--ease-out),
-    color 0.35s var(--ease-out),
-    transform 0.5s var(--ease-out);
+  transition: border-color 0.35s var(--ease-out), background 0.35s var(--ease-out), color 0.35s var(--ease-out);
 }
 
-.xp-item:hover .xp-item__badge {
+.parcours__card:hover .parcours__badge {
   border-color: var(--c-black);
   background: var(--c-black);
   color: var(--c-white);
-  transform: rotate(360deg);
 }
 
-.xp-item__company {
+.parcours__company {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 6vw, 5rem);
   font-style: italic;
   font-weight: 700;
-  padding-left: 0.08em;
-  margin-left: -0.08em;
   line-height: 0.92;
   letter-spacing: -0.02em;
   color: var(--c-black);
   opacity: 0.72;
-  transition:
-    opacity 0.4s ease,
-    transform 0.5s var(--ease-out);
+  transition: opacity 0.4s ease;
 }
 
-.xp-item.is-active .xp-item__company,
-.xp-item:hover .xp-item__company {
+.parcours__card:hover .parcours__company {
   opacity: 1;
-  transform: translateY(-4px);
 }
 
-.xp-item__role {
+.parcours__role {
   font-family: var(--font-mono);
   font-size: clamp(0.65rem, 1.2vw, 0.78rem);
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--c-gray-600);
-  transition: color 0.3s ease;
 }
 
-.xp-item:hover .xp-item__role {
-  color: var(--c-black);
-}
-
-.xp-item__caption {
+.parcours__meta {
   font-size: 0.82rem;
   color: var(--c-gray-600);
   line-height: 1.5;
+}
+
+.parcours__date {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.38rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--c-gray-600);
+  background: rgba(255, 255, 255, 0.03);
+  width: fit-content;
+}
+
+.parcours__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
   margin-top: 0.25rem;
 }
 
-.xp-item__right {
+.parcours__right {
   display: grid;
-  gap: 1rem;
+  gap: 0.85rem;
   align-content: start;
 }
 
-.xp-item__missions {
+.parcours__missions {
   list-style: none;
   padding: 0;
   display: grid;
   gap: 0.6rem;
 }
 
-.xp-item__missions li {
+.parcours__missions li {
   position: relative;
   padding-left: 1.1rem;
   font-size: 0.84rem;
@@ -1048,7 +1003,7 @@
   transition: color 0.3s ease;
 }
 
-.xp-item__missions li::before {
+.parcours__missions li::before {
   content: "—";
   position: absolute;
   left: 0;
@@ -1057,81 +1012,37 @@
   top: 0.3em;
 }
 
-.xp-item:hover .xp-item__missions li {
+.parcours__card:hover .parcours__missions li {
   color: var(--c-black);
 }
 
-.xp-item__missions li:nth-child(1) { transition-delay: 0ms; }
-.xp-item__missions li:nth-child(2) { transition-delay: 40ms; }
-.xp-item__missions li:nth-child(3) { transition-delay: 80ms; }
-
-.xp-item__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
-}
-
-/* Hide the old rule separators — card edges do the job */
-.xp-item__rule {
-  display: none;
-}
-
-/* Extra space after last card so stacking effect has room */
-.xp-item:last-child {
-  margin-bottom: 20vh;
-}
-
-/* ── Desktop layout ── */
+/* ── Desktop ── */
 @media (min-width: 900px) {
-  .xp-layout {
-    grid-template-columns: 1fr;
-    gap: clamp(2rem, 4vw, 3rem);
+  .parcours__card-inner {
+    grid-template-columns: minmax(250px, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.35rem 2rem;
   }
 
-  .xp-header {
-    position: sticky;
-    top: calc(var(--nav-height) + 1.25rem);
-    align-self: start;
-    margin-bottom: 0;
-    z-index: 6;
+  .parcours__left {
+    padding-right: 0.35rem;
   }
 
-  .xp-item {
-    top: calc(
-      var(--nav-height) + var(--xp-header-space) + var(--xp-offset, 0px)
-    );
-  }
-
-  .xp-item__wrap {
-    grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
-    gap: 2rem 3rem;
-  }
-
-  .xp-item__center {
-    padding-right: 1rem;
-  }
-
-  .xp-item__right {
-    gap: 1.2rem;
-  }
-
-  .xp-item__missions {
+  .parcours__missions {
     display: block;
     column-count: 2;
-    column-gap: 1.5rem;
+    column-gap: 1.1rem;
   }
 
-  .xp-item__missions li {
+  .parcours__missions li {
     break-inside: avoid;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .xp-item__wrap {
-    grid-template-columns: minmax(300px, 0.88fr) minmax(0, 1.12fr);
-    gap: 2rem 4rem;
+  .parcours__card-inner {
+    grid-template-columns: minmax(285px, 0.88fr) minmax(0, 1.12fr);
+    gap: 1.5rem 2.5rem;
   }
 }
 
