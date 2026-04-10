@@ -27,6 +27,7 @@ const UI_MESSAGES = {
   missingFormspree: "Ajoutez votre identifiant Formspree dans l'attribut action du formulaire pour activer l'envoi.",
   success: "Merci, votre message a bien ete envoye. Je vous reponds des que possible.",
   tooFast: "Merci de patienter un instant avant d'envoyer le formulaire.",
+  recaptcha: "La verification de securite n'a pas pu etre effectuee. Merci de reessayer dans un instant.",
   error: "Une erreur est survenue. Vous pouvez aussi me contacter par email."
 };
 
@@ -94,6 +95,40 @@ const setButtonState = (button, state) => {
   button.disabled = state === "loading";
 };
 
+const waitForRecaptcha = () =>
+  new Promise((resolve, reject) => {
+    const startedAt = Date.now();
+
+    const check = () => {
+      if (window.grecaptcha?.ready && window.grecaptcha?.execute) {
+        resolve(window.grecaptcha);
+        return;
+      }
+
+      if (Date.now() - startedAt > 5000) {
+        reject(new Error("reCAPTCHA unavailable"));
+        return;
+      }
+
+      window.setTimeout(check, 120);
+    };
+
+    check();
+  });
+
+const getRecaptchaToken = async (siteKey) => {
+  const grecaptcha = await waitForRecaptcha();
+
+  return new Promise((resolve, reject) => {
+    grecaptcha.ready(() => {
+      grecaptcha
+        .execute(siteKey, { action: "submit" })
+        .then(resolve)
+        .catch(reject);
+    });
+  });
+};
+
 export const initForm = () => {
   const form = document.getElementById("contact-form");
 
@@ -111,6 +146,7 @@ export const initForm = () => {
   const nameField = form.querySelector("#name");
   const inquiryField = form.querySelector("#inquiry-type");
   const formStartedAt = Date.now();
+  const recaptchaSiteKey = form.dataset.recaptchaSiteKey;
 
   fields.forEach((field) => {
     const validate = () => {
@@ -165,12 +201,19 @@ export const initForm = () => {
     }
 
     try {
+      const formData = new FormData(form);
+
+      if (recaptchaSiteKey) {
+        const recaptchaToken = await getRecaptchaToken(recaptchaSiteKey);
+        formData.set("g-recaptcha-response", recaptchaToken);
+      }
+
       const response = await fetch(form.action, {
         method: "POST",
         headers: {
           Accept: "application/json"
         },
-        body: new FormData(form)
+        body: formData
       });
 
       if (!response.ok) {
@@ -181,7 +224,10 @@ export const initForm = () => {
       fields.forEach((field) => setFieldError(field, ""));
       status.textContent = UI_MESSAGES.success;
     } catch (error) {
-      status.textContent = UI_MESSAGES.error;
+      status.textContent =
+        error?.message === "reCAPTCHA unavailable"
+          ? UI_MESSAGES.recaptcha
+          : UI_MESSAGES.error;
     } finally {
       setButtonState(submitButton, "idle");
     }
