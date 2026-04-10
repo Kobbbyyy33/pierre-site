@@ -839,9 +839,10 @@
   padding-bottom: clamp(1.1rem, 2.4vw, 1.75rem);
 }
 
-/* Stack wrapper — no overflow, full height for sticky to work */
+/* Stack wrapper — z-index crée un contexte d'empilement au-dessus du header */
 .parcours__stack {
   position: relative;
+  z-index: 1;
 }
 
 /* ── Card ── */
@@ -850,11 +851,12 @@
   width: min(100% - (var(--gutter) * 2), 1240px);
   margin-inline: auto;
   padding: clamp(1.35rem, 2.5vw, 1.9rem);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1.5rem;
-  background: rgba(10, 10, 14, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 10, 14, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.06) inset;
   overflow: hidden;
   transition: transform 0.5s var(--ease-out), opacity 0.5s ease;
 }
@@ -866,16 +868,12 @@
 }
 
 .parcours__card--2 {
-  top: calc(var(--nav-height) + 28px);
+  top: calc(var(--nav-height) + 40px);
   z-index: 3;
   margin-bottom: 0;
 }
 
-/* When card 1 is behind card 2 */
-.parcours__card.is-behind {
-  transform: scale(0.96);
-  opacity: 0.3;
-}
+/* Fallback is-behind (remplacé par la règle haute spécificité dans animations.css) */
 
 /* Ghost number */
 .parcours__ghost {

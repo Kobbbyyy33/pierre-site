@@ -24,13 +24,22 @@
     rotate(var(--expertise-rotate, 0deg));
 }
 
-/* Parcours card reveal — opacity only so sticky isn't broken */
+/* Parcours card reveal — no transform so sticky position stays correct */
 .parcours__card.reveal {
   opacity: 0;
+  transform: none; /* neutralise le translateY(32px) de .reveal qui casse le sticky */
   transition: opacity var(--duration-slow) var(--ease-out);
 }
 .parcours__card.reveal.is-visible {
   opacity: 1;
+  transform: none;
+  /* restore la transition complète une fois révélé, pour que is-behind anime */
+  transition: transform 0.5s var(--ease-out), opacity 0.5s ease;
+}
+/* Spécificité 0-4-0 — bat .reveal.is-visible (0-2-0) et le transition ne s'applique plus */
+.parcours__card.reveal.is-visible.is-behind {
+  transform: scale(0.95) translateY(10px);
+  opacity: 0.18;
 }
 
 .expertise__card:nth-child(1) {
